@@ -78,7 +78,8 @@ let rec tp_stmt (env:environment) (s : 'a stmt) = match s with
     then let t1,t2 = (tp_stmt env stmt1 ), (tp_stmt env stmt2) in 
       Cond(t0,t1,t2)
     else failwith "Cond error : cond is not a boolean"
-  | While (_,stmt) -> tp_stmt env stmt
+  | While (expr,stmt) -> let t0,t1= tp_expr env expr , tp_stmt env stmt  in 
+                        While(t0,t1)
   | Return (expr) -> 
     let t = tp_expr env expr in 
         if tp_of_expr t==env.returntp 
