@@ -99,9 +99,9 @@ fonctions propre à Ocaml telles que **List.fold_right** ou **List.map**
   * Code
 ![Pour ce code](https://github.com/morganLantrade/Projet_types_de_donnees/tree/main/assets/code.png)
 
-![Pour ce code](https://github.com/morganLantrade/Projet_types_de_donnees/tree/main/assets/code.png)
+![Pour ce code](https://github.com/morganLantrade/Projet_types_de_donnees/tree/main/assets/lancement.png)
 
-![Pour ce code](https://github.com/morganLantrade/Projet_types_de_donnees/tree/main/assets/code.png)
+![Pour ce code](https://github.com/morganLantrade/Projet_types_de_donnees/tree/main/assets/console_after.png)
 
 
 
