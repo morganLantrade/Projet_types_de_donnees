@@ -122,16 +122,25 @@ let asso_varTab (f: 'a fundefn) (instrTab: (rel_jump, instr_var) instr list) = m
                     let nb_var_auxi = max_auxi 0 instrTab in 
                         varTab1@(List.init (nb_var_auxi+1) (fun x -> (IVarNum(x),x+nb_var_named)));;
 
-
+(*Retourne tableau vide de longueur de la liste des variables declarees + auxiliaires*)
 let init_varTab (f: 'a fundefn) (instrTab: (rel_jump, instr_var) instr list)= 
     let varTab = Array.make (List.length (asso_varTab f instrTab)) 0 in 
         varTab;;
-    
-let rec init_params (varTab: int array) (i : int) = function 
-    [] -> varTab
-    |(param::lst) -> let _= Array.set varTab i  param in 
-         init_params varTab (i+1) lst;;
 
+(*Retourne tableau de variable initialise selon la liste des parametres verifiee*)  
+let rec init_params (varTab: int array) (i : int) (params: int list)= 
+        match params with
+            [] -> varTab
+            |(param::lst) -> let _= Array.set varTab i  param in 
+                 init_params varTab (i+1) lst;;
+
+(*verifie la longueur de la liste de parametres et l'initialise*)
+let verif_params (f: 'a fundefn) (params: int list) (varTab: int array) = match f with 
+    Fundefn(Fundecl(_,_,params_f),_,_) -> let l1,l2 = List.length params_f,List.length params in 
+        if l1!=l2 
+        then let message = "Number of arguments expected "^string_of_int(l1)^" got "^string_of_int(l2) in 
+            failwith message
+        else init_params varTab 0 params;;
 
 (* ************************************************************ *)
 (* **** Traduction de RelJump VarNamed to AbsJump IIndex   **** *)
@@ -171,6 +180,7 @@ let trad2 (instrTab: (rel_jump, instr_index) instr list) =
                |Exit(v)  -> Exit(v) 
                |Store(v,a) -> Store(v,a)  in 
                    Array.of_list (List.mapi g instrTab);;
+
 
 
 
