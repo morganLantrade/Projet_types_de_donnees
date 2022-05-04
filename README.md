@@ -97,7 +97,7 @@ fonctions propre à Ocaml telles que **List.fold_right** ou **List.map**
 
 ##### Rendu
 
-Le projet zippé rendu à déja été compilé via **Makefile**
+Le projet zippé rendu à déja été compilé via **Makefile**.
 
 
 #### Exemple de test dans **/Test**
