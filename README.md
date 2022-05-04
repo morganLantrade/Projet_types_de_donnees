@@ -96,7 +96,7 @@ Les fonctions auxiliaires ne sont pas toujours optimisées et nous n'avons pas r
 fonctions propre à Ocaml telles que **List.fold_right** ou **List.map**
 
 #### Exemple de test
-
+  * Code
 ![Pour ce code](https://github.com/morganLantrade/Projet_Rush_hour/blob/main/readme_png/menu_1.png)
 
 
