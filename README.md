@@ -95,12 +95,12 @@ La dépendance des différentes parties, nous a empêché de diviser le travail 
 Les fonctions auxiliaires ne sont pas toujours optimisées et nous n'avons pas réussi à pleinement utiliser les
 fonctions propre à Ocaml telles que **List.fold_right** ou **List.map**
 
-#### Exemple de test
+#### Exemple de test dans **/Test**
   * Code
   
 ![alt text](https://github.com/morganLantrade/Projet_types_de_donnees/blob/main/assets/code.png)
 
-  * Appel
+  * Appel dans **use.ml**
   
 ![alt text](https://github.com/morganLantrade/Projet_types_de_donnees/blob/main/assets/lancement.png)
 
