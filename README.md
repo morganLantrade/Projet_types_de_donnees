@@ -37,7 +37,7 @@ par cas les différentes erreurs possibles.
 
 ## Exécution de l'assembleur
 
-### Tableau d'instructions
+#### Tableau d'instructions
 
 Nous avons réalisé la fonction exec_instr avec, tout d'abord, des jumps relatifs et des variables indexées mais
 par la suite nous l'avons modifié suite aux consignes de la partie : **génération de l'assembleur**.
@@ -46,7 +46,7 @@ par la suite nous l'avons modifié suite aux consignes de la partie : **généra
 Les difficultés rencontrées :
  * Une fois les fonctions implémentées, nous ne pouvions pas encore les tester.
 
-## Génération de l'assembleur
+#### Génération de l'assembleur
 
 Nous avons réalisé dans **gen.ml** la fonction gen_instr qui retourne une liste d'instructions à jumps rélatifs et variables nommées.
 
@@ -58,7 +58,7 @@ Enfin nous avons transformé les jumps relatifs en absolue à l'aide de **List.m
 
 
 
-### Tableau de variables
+#### Tableau de variables
 
 Dans **instrs.ml**, nous avons initialisé le tableau de variables avec une fois de plus la liste d'association,
 en s'aidant de sa longueur.
@@ -83,14 +83,14 @@ Nous l'avons testé sur plusieurs fichiers test et avons eu des résultats cohé
 
 Nous avons, par soucis de temps, décidé de ne pas s'occuper du graphe de flots.
 
-### Difficultés générales
+##### Difficultés générales
 
 L'environnement de travail(dans une simple terminal), le nombre de fichiers et notre connaissance en Ocaml, ne nous
 a pas permis de travailler dans des conditions idéales.
 
 La dépendance des différentes parties, nous a empêché de diviser le travail convenablement et avons passé la majeure partie à coder à trois.
 
-### Optimisations possibles
+##### Optimisations possibles
 
 Les fonctions auxiliaires ne sont pas toujours optimisées et nous n'avons pas réussi à pleinement utiliser les
 fonctions propre à Ocaml telles que **List.fold_right** ou **List.map**
