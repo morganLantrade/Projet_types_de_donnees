@@ -8,73 +8,96 @@ Projet réalisé dans le cadre de l'UE types de données par
 ## Sommaire
 
 * [Typage](#Typage)
-  * [Réalisation](#T_R)
-  * [Difficultés](#T_D)
-  * [Test](#T_T)
+  
 * [Exécution de l'assembleur](#Exécution_assembleur)
-  * [Réalisation](#E_R)
-  * [Difficultés](#E_D)
-  * [Test](#E_T)
-* [Génération de l'assembleur](#Génération)
-  * [Réalisation](#G_R)
-  * [Difficultés](#G_D)
-  * [Test](#G_T)
-* [Conclusion](#Conclusion)
-  * [Réalisation](#C_R)
-  * [Difficultés](#C_D)
-  * [Test](#C_T)
-
-
-<!-- GETTING STARTED -->
-## Getting Started
-
-To get a local copy up and running follow these simple steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* Git
-```sh
-sudo apt-get install git
-```
-
-### Installation
  
-1. Clone the repo
-```sh
-git clone https://github.com/NicolasBrondin/basic-readme-template
-```
-2. Open VS Code
-3. Install Markdown Preview Enhancement plugin
-3. Open the README.md file and execute the following command
-```sh
-ctrl+k v
-```
+* [Génération de l'assembleur](#Génération)
+  
+* [Conclusion](#Conclusion)
+  
+
+## Typages
+
+Nous avons réalisé la fonction tp_fundefn, qui vérifie les déclarations de paramètres et de variables locales
+et génère un environnement qui permet de typer le corps de la fonction (statement).
+
+Les difficultés rencontrées :
+ * Gérer les exceptions
+ * Tester nos fonctions au fur et à mesure
+
+Les optimisations possibles :
+ * Certaines fonctions auxiliaires ne sont optimisées niveau complexité car nous avons privilégié de travailler sur la suite du projet.
 
 
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-
-<!-- CONTACT -->
-## Contact
-
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
-
-Project Link: [https://github.com/github_username/github_repo](https://github.com/github_username/github_repo)
+Pour tester nos fonctions de typage, nous avons crée un fichier test_typing.ml où l'on test au cas
+par cas les différentes erreurs possibles.
 
 
 
-<!-- ACKNOWLEDGEMENTS -->
+
+## Exécution de l'assembleur
+
+### Tableau d'instructions
+
+Nous avons réalisé la fonction exec_instr avec, tout d'abord, des jumps relatifs et des variables indexées mais
+par la suite nous l'avons modifié suite aux consignes de la partie : **génération de l'assembleur**.
+
+
+Les difficultés rencontrées :
+ * Une fois les fonctions implémentées, nous ne pouvions pas encore les tester.
+
+## Génération de l'assembleur
+
+Nous avons réalisé dans **gen.ml** la fonction gen_instr qui retourne une liste d'instructions à jumps rélatifs et variables nommées.
+
+Par la suite dans **instrs.ml**, nous avons traduis cette liste d'instructions en une liste d'instructions à jumps absolus et variables indexées.
+
+Pour ce faire, nous avons tout d'abord transformé les variables nommées par des variables indexées à l'aide d'une
+liste d'association **(instr_var*int list)**, où l'entier correspond à l'IIndex.
+Enfin nous avons transformé les jumps relatifs en absolue à l'aide de **List.mapi** .
+
+
+
+### Tableau de variables
+
+Dans **instrs.ml**, nous avons initialisé le tableau de variables avec une fois de plus la liste d'association,
+en s'aidant de sa longueur.
+
+Dans un second temps, nous modifions celui-ci à l'aide de la liste de paramètres après avoir vérifier que le nombre d'arguments correspont aux nombres de paramètres de la fonction.
+
+### Les difficultés rencontrées 
+
+Lorsqu'un résultat était incorrect, il était très difficile de trouver où se situait l'erreur. Nous avons utilisé
+la fonction **trace** de ocaml, mais l'affichage dans la console, étant lourd, nous a fait perdre du temps.
+
+Les filtrages **IfThenElse**, **Cond** et **While** ont été particulièrement périlleux à determiner avec le peu 
+d'exemples fournis.
+
+
 ## Conclusion
 
-### Test
+Nous avons crée et testé la fonction run_test dans **use.ml** car n'ayant pas de fichier **interf.ml** compilable,
+nous ne pouvions pas utilisé le fichier **comp.ml**.
 
-* This readme version is a simplified version of this [github repository](https://github.com/othneildrew/Best-README-Template) by Othneildrew
+Nous l'avons testé sur plusieurs fichiers test et avons eu des résultats cohérents. En particulier sur le fichier "test_final.c", contenant tous les filtrages que l'on puisse rencontrer.
+
+Nous avons, par soucis de temps, décidé de ne pas s'occuper du graphe de flots.
+
+### Difficultés générales
+
+L'environnement de travail(dans une simple terminal), le nombre de fichiers et notre connaissance en Ocaml, ne nous
+a pas permis de travailler dans des conditions idéales.
+
+La dépendance des différentes parties, nous a empêché de diviser le travail convenablement et avons passé la majeure partie à coder à trois.
+
+### Optimisations possibles
+
+Les fonctions auxiliaires ne sont pas toujours optimisées et nous n'avons pas réussi à pleinement utiliser les
+fonctions propre à Ocaml telles que **List.fold_right** ou **List.map**
+
+
+
+
 
 
 
