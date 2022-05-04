@@ -7,16 +7,16 @@ Projet réalisé dans le cadre de l'UE types de données par
 
 ## Sommaire
 
-* [Typage](#Typage)
+* [Typage](#1)
   
-* [Exécution de l'assembleur](#Exécution_assembleur)
+* [Exécution de l'assembleur](#2)
  
-* [Génération de l'assembleur](#Génération)
+* [Génération de l'assembleur](#3)
   
-* [Conclusion](#Conclusion)
+* [Conclusion](#4)
   
 
-## Typages
+## Typages <a class="anchor" id="1"></a>
 
 Nous avons réalisé la fonction tp_fundefn, qui vérifie les déclarations de paramètres et de variables locales
 et génère un environnement qui permet de typer le corps de la fonction (statement).
@@ -35,7 +35,7 @@ par cas les différentes erreurs possibles.
 
 
 
-## Exécution de l'assembleur
+## Exécution de l'assembleur <a class="anchor" id="2"></a>
 
 #### Tableau d'instructions
 
@@ -46,7 +46,7 @@ par la suite nous l'avons modifié suite aux consignes de la partie : **généra
 Les difficultés rencontrées :
  * Une fois les fonctions implémentées, nous ne pouvions pas encore les tester.
 
-#### Génération de l'assembleur
+## Génération de l'assembleur <a class="anchor" id="3"></a>
 
 Nous avons réalisé dans **gen.ml** la fonction gen_instr qui retourne une liste d'instructions à jumps rélatifs et variables nommées.
 
@@ -74,7 +74,7 @@ Les filtrages **IfThenElse**, **Cond** et **While** ont été particulièrement 
 d'exemples fournis.
 
 
-## Conclusion
+## Conclusion <a class="anchor" id="4"></a>
 
 Nous avons crée et testé la fonction run_test dans **use.ml** car n'ayant pas de fichier **interf.ml** compilable,
 nous ne pouvions pas utilisé le fichier **comp.ml**.
