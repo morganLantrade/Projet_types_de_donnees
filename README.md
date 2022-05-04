@@ -95,6 +95,11 @@ La dépendance des différentes parties, nous a empêché de diviser le travail 
 Les fonctions auxiliaires ne sont pas toujours optimisées et nous n'avons pas réussi à pleinement utiliser les
 fonctions propre à Ocaml telles que **List.fold_right** ou **List.map**
 
+##### Rendu
+
+Le projet zippé rendu à déja été compilé via **Makefile**
+
+
 #### Exemple de test dans **/Test**
   * Code
   
@@ -107,6 +112,8 @@ fonctions propre à Ocaml telles que **List.fold_right** ou **List.map**
 * Resultat
 
 ![alt text](https://github.com/morganLantrade/Projet_types_de_donnees/blob/main/assets/console_after.png)
+
+
 
 
 
