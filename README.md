@@ -65,7 +65,7 @@ en s'aidant de sa longueur.
 
 Dans un second temps, nous modifions celui-ci à l'aide de la liste de paramètres après avoir vérifier que le nombre d'arguments correspont aux nombres de paramètres de la fonction.
 
-### Les difficultés rencontrées 
+#### Les difficultés rencontrées 
 
 Lorsqu'un résultat était incorrect, il était très difficile de trouver où se situait l'erreur. Nous avons utilisé
 la fonction **trace** de ocaml, mais l'affichage dans la console, étant lourd, nous a fait perdre du temps.
@@ -83,19 +83,19 @@ Nous l'avons testé sur plusieurs fichiers test et avons eu des résultats cohé
 
 Nous avons, par soucis de temps, décidé de ne pas s'occuper du graphe de flots.
 
-##### Difficultés générales
+#### Difficultés générales
 
 L'environnement de travail(dans une simple terminal), le nombre de fichiers et notre connaissance en Ocaml, ne nous
 a pas permis de travailler dans des conditions idéales.
 
 La dépendance des différentes parties, nous a empêché de diviser le travail convenablement et avons passé la majeure partie à coder à trois.
 
-##### Optimisations possibles
+#### Optimisations possibles
 
 Les fonctions auxiliaires ne sont pas toujours optimisées et nous n'avons pas réussi à pleinement utiliser les
 fonctions propre à Ocaml telles que **List.fold_right** ou **List.map**
 
-##### Rendu
+#### Rendu
 
 Le projet zippé rendu à déja été compilé via **Makefile**.
 
